@@ -1,1 +1,1 @@
-. ~/.zsh/rc
+. ~/.oh-my-zsh/rc.zsh

@@ -1,29 +1,6 @@
 setopt prompt_subst
 setopt hist_ignore_dups
 
-export EDITOR="~/bin/mvim --nofork"
-
-unshift_path() {
-  path=($* $path)
-}
-push_path() {
-  path=($path $*)
-}
-
-unshift_path /opt/local/sbin
-unshift_path /usr/sbin /usr/bin
-
-unshift_path /usr/local/bin
-unshift_path /opt/local/bin
-
-unshift_path ~/bin
-unshift_path ~/.gem/ruby/1.8/bin
-
-unshift_path /usr/local/ruby-enterprise/bin
-unshift_path ~/homebrew/bin ~/homebrew/sbin
-
-export PATH
-export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
 
 
 . ~/.zsh/prompt

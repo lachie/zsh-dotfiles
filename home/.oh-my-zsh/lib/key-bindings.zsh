@@ -2,6 +2,7 @@
 autoload -U compinit
 compinit -i
 
+
 bindkey -e
 bindkey '\ew' kill-region
 bindkey -s '\el' "ls\n"
@@ -13,6 +14,10 @@ bindkey "^[[6~" down-line-or-history
 # make search up and down work, so partially type and hit up/down to find relevant stuff
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+
+#autoload -U up-line-or-beginning-search
+#zle -N up-line-or-beginning-search
+#bindkey '^[[A' up-line-or-beginning-search
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[1~" beginning-of-line

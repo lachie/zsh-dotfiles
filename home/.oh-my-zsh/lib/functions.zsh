@@ -11,11 +11,16 @@ function title {
   fi
 }
 
-function precmd {
+autoload -U add-zsh-hook
+
+add-zsh-hook precmd prompt_omz_precmd
+add-zsh-hook preexec prompt_omz_preexec
+
+function prompt_omz_precmd {
   title zsh "$PWD"
 }
 
-function preexec {
+function prompt_omz_preexec {
   emulate -L zsh
   local -a cmd; cmd=(${(z)1})
   title $cmd[1]:t "$cmd[2,-1]"
