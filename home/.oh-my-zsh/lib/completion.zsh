@@ -1,8 +1,14 @@
 # fixme - the load process here seems a bit bizarre
 
-unsetopt menu_complete   # do not autoselect the first completion entry
+setopt no_beep
 unsetopt flowcontrol
-setopt auto_menu         # show completion menu on succesive tab press
+
+# setopt menu_complete
+# setopt bash_auto_list
+
+setopt auto_menu
+setopt list_ambiguous
+
 setopt complete_in_word
 setopt always_to_end
 
