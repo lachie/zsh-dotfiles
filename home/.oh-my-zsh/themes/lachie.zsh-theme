@@ -1,5 +1,5 @@
 PROMPT='%F{yellow}%2c$(git_prompt_info)
->%f '
+%F{blue}>%f '
 RPROMPT='%F{blue}$(rvm_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[white]%}"
