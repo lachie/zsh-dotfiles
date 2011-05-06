@@ -25,5 +25,7 @@ plugins=(git projects rubygems zsh-syntax-highlighting zsh-history-substring-sea
 
 source $ZSH/oh-my-zsh.sh
 
+path=( $HOME/bin $path )
+
 # Customize to your needs...
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
