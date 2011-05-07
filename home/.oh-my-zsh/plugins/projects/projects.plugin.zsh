@@ -19,6 +19,15 @@ m() {
   fi
 }
 
+
+add_project() {
+  local base
+  base=$(basename $PWD)
+  
+  sqlite3 -batch $p_completion_cache "insert into git_repos values('$base','$base','$PWD',1)"
+}
+
+
 # reindex the projects
 projects_reindex() {
   shallow_git_find $p_completion_cache $project_roots
