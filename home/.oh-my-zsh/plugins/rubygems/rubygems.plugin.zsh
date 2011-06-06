@@ -1,7 +1,14 @@
+find_gem() {
+  local bundled
+  bundled=$(bundle show $@ --no-color)
+  bundled=${bundled:#Could not locate Gemfile}
+  echo ${bundled:-$(fgem $@)}
+}
+
 cdgem() {
-  cd $(fgem $@)
+  cd $(find_gem $@)
 }
 
 vigem() {
-  mvim $(fgem $@)/lib
+  mvim $(find_gem $@)/lib
 }
