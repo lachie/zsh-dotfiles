@@ -5,14 +5,17 @@ project_roots=($HOME/dev $HOME/Dropbox/dev)
 # main commands
 # cd to a project
 p() {
-  cd $(sqlite3 -list $p_completion_cache "select path from git_repos where basename='$1' limit 1")
+  if [[ -z "$1" ]]; then
+    cd $(git rev-parse --show-cdup)
+  else
+    cd $(sqlite3 -list $p_completion_cache "select path from git_repos where basename='$1' limit 1")
+  fi
 }
 
 
 # open a project in mvim
 m() {
-  if [[ $# -eq 0 ]]
-  then
+  if [[ $# -eq 0 ]]; then
     mvim .
   else
     mvim $(project_resolve $1)
