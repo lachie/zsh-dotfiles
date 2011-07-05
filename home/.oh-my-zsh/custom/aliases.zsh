@@ -11,5 +11,9 @@ function f() {
   find . -iname "*$**"
 }
 
+alias dl="curl -L -O"
+
 export dropbox=$HOME/Dropbox
 export p2dropbox=$dropbox/Plus2
+export dev=$HOME/dev
+export p2dev=$dev/plus2
