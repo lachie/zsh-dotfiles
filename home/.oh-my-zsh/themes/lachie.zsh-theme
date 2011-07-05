@@ -1,4 +1,4 @@
-PROMPT='%F{yellow}%2c$(git_prompt_info)${SSH_TTY:+[%n@%m]}
+PROMPT='%F{yellow}%2c$(git_prompt_info)${SSH_TTY:+ [%n@%m]}
 %F{blue}>%f '
 RPROMPT='%F{blue}$(rvm_prompt_info)'
 
