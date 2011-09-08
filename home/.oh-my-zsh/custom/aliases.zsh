@@ -1,6 +1,9 @@
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC &"
 alias edhosts="sudo mvim /etc/hosts"
 
+alias mcsync="rsync -avz -P home:Library/Application\\\ Support/minecraft/ ~/Library/Application\ Support/minecraft"
+alias mcsyncback="rsync -avz -P ~/Library/Application\ Support/minecraft/ home:Library/Application\\\ Support/minecraft"
+
 alias less="less -r"
 
 function apk() {
