@@ -1,7 +1,7 @@
 find_gem() {
   local bundled
   bundled=$(bundle show $@ --no-color)
-  bundled=${bundled:#Could not locate Gemfile}
+  # bundled=${bundled:#Could not locate Gemfile}
   echo ${bundled:-$(fgem $@)}
 }
 
