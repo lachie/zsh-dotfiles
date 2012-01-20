@@ -1,5 +1,5 @@
 p_completion_cache=$HOME/.config/completion_caches/p/repos.sqlite
-project_roots=($HOME/dev $HOME/Dropbox/dev)
+project_roots=($HOME/dev $HOME/Dropbox/dev $HOME/Blake)
 
 
 # main commands

@@ -25,7 +25,7 @@ plugins=(git projects rubygems zsh-syntax-highlighting zsh-history-substring-sea
 
 source $ZSH/oh-my-zsh.sh
 
-path=( $HOME/bin /usr/local/sbin $path )
+path=( $HOME/.rbenv/bin $HOME/.rbenv/shims $HOME/bin /usr/local/sbin $path )
 
 # Customize to your needs...
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+eval "$(rbenv init - zsh)"

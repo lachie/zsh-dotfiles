@@ -6,7 +6,7 @@ find_gem() {
 }
 
 cdgem() {
-  cd $(find_gem $@)
+  cd $(find_gem $@)/lib
 }
 
 vigem() {

@@ -10,7 +10,7 @@ alias start_mongod="mongod --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongo
 alias less="less -r"
 
 function apk() {
-  ack "$@" app lib
+  ack "$@" app lib spec
 }
 
 function f() {
