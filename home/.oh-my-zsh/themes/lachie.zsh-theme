@@ -1,6 +1,6 @@
 PROMPT='%F{yellow}%2c$(git_prompt_info)${SSH_TTY:+ [%n@%m]}
 %F{blue}>%f '
-RPROMPT='%F{blue}$(rvm_prompt_info)'
+RPROMPT='%F{blue}$(rbenv_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f"

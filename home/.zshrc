@@ -27,5 +27,4 @@ source $ZSH/oh-my-zsh.sh
 
 path=( $HOME/.rbenv/bin $HOME/.rbenv/shims $HOME/bin /usr/local/sbin $path )
 
-# Customize to your needs...
 eval "$(rbenv init - zsh)"
