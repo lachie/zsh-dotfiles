@@ -11,3 +11,4 @@ function mvim()
   )
 }
 
+bindkey -v 
