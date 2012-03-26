@@ -24,7 +24,3 @@ export DISABLE_AUTO_UPDATE="true"
 plugins=(git projects rubygems zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
-
-path=( $HOME/.rbenv/bin $HOME/.rbenv/shims $HOME/bin /usr/local/sbin /usr/local/flex/bin $path )
-
-eval "$(rbenv init - zsh)"
