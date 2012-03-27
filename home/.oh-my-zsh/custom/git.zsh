@@ -20,6 +20,6 @@ function git_current_branch() {
 
 alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias grb='git rebase -p'
-alias gup='git fetch origin && grb origin/$(git_current_branch)'
+alias gup='git stash && git fetch origin && grb origin/$(git_current_branch) && git stash pop'
 alias gm='git merge --no-ff'
 
