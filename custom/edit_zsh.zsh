@@ -3,5 +3,5 @@ rezsh() {
 }
 
 edzsh() {
-  mvim -p ~/.oh-my-zsh ~/.zshrc
+  mvim -p ~/.zsh ~/.zshrc
 }
