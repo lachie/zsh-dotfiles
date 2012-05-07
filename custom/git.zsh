@@ -5,6 +5,11 @@ alias ga="git add"
 alias gap="git add -p"
 
 alias gx='gitx'
+alias gd='git diff'
+
+function gdx() {
+  git diff $* | gitx
+}
 
 export git_concise_log_format='--pretty=format:%Cblue%h%d%Creset %ar %Cgreen%an%Creset %s'
 
