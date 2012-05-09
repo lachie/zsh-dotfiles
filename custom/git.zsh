@@ -25,6 +25,16 @@ function git_current_branch() {
 
 alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias grb='git rebase -p'
-alias gup='git fetch origin && grb origin/$(git_current_branch)'
 alias gm='git merge --no-ff'
 
+alias gup_orig='git fetch origin && grb origin/$(git_current_branch)'
+
+function gup() {
+  if [[ -n $(git status -s | grep -v '??' 2> /dev/null) ]]; then
+    echo "your index is dirty; please git stash or commit, then rerun gup"
+    # auto-stash?
+  else
+    git fetch origin && git rebase -p origin/$(git_current_branch)
+  fi
+}
+compdef _git gup=git-fetch
