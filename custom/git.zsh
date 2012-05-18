@@ -38,3 +38,64 @@ function gup() {
   fi
 }
 compdef _git gup=git-fetch
+
+
+
+function grelease() {
+  if ! git diff-index --quiet HEAD; then
+    echo "repo is dirty; please git stash of commit, then rerun"
+    return
+  fi
+
+  old_release=$(cat ./CURRENT_GIT_FLOW_RELEASE 2> /dev/null)
+  if [[ -z "$old_release" ]]; then
+    echo "existing release '$old_release' found in ./CURRENT_GIT_FLOW_RELEASE; please clean this up, then rerun"
+    return
+  fi
+
+  # TODO handle multiple releases per day
+  release=$(date +%Y-%m-%d)
+
+  echo "releasing $release"
+  echo $release > CURRENT_GIT_FLOW_RELEASE
+
+  git checkout master && \
+  gup && \
+  git checkout develop && \
+  gup && \
+  git flow release start $release || {
+    echo "git flow failed"
+    return
+  }
+
+
+  bundle exec cap staging export_sitecopy && bundle exec rake manage_content:download_sitecopy
+
+  # TODO download new asset manifest
+
+  if ! git diff-index --quiet HEAD; then
+    echo -n "please inspect these automatically added changes and commit as necessary; "
+    git diff
+  else
+    echo -n "please inspect your shiny new release branch"
+  fi
+
+  echo "; when you're finished, run grelease_finish"
+}
+
+
+function grelease_finish() {
+  release=$(cat ./CURRENT_GIT_FLOW_RELEASE 2> /dev/null)
+  if [[ -z "$release" ]]; then
+    echo "no current release found... did you start one with 'grelease' first?"
+    return
+  fi
+
+  echo "finishing release $release"
+
+  git flow release finish $release && \
+  git push --tags origin master && \
+  git push origin develop
+
+  rm ./CURRENT_GIT_FLOW_RELEASE
+}
