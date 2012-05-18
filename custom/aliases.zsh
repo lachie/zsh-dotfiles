@@ -17,7 +17,7 @@ function apk() {
     [[ -d $d ]] && to_open=($to_open $d)
   done
 
-  echo ack "$@" $to_open
+  ack "$@" $to_open
 }
 
 function f() {
