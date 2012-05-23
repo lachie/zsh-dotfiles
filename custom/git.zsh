@@ -17,28 +17,59 @@ alias glog='git log $git_concise_log_format'
 alias gl='glog --graph'
 alias glg='git log --graph --oneline --decorate'
 
+alias grh="git reset --hard HEAD"
+
+alias gm='git merge --no-ff'
 
 
+# gup and friends
 function git_current_branch() {
   git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
 }
 
-alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias grb='git rebase -p'
-alias gm='git merge --no-ff'
 
-alias gup_orig='git fetch origin && grb origin/$(git_current_branch)'
+
+alias gup_base='git fetch origin && grb origin/$(git_current_branch)'
+
 
 function gup() {
-  if [[ -n $(git status -s | grep -v '??' 2> /dev/null) ]]; then
-    echo "your index is dirty; please git stash or commit, then rerun gup"
-    # auto-stash?
+  if ! git diff-index --quiet HEAD; then
+    echo your index is dirty
+    echo please git stash or commit, then rerun gup
   else
-    git fetch origin && git rebase -p origin/$(git_current_branch)
+    gup_base
   fi
 }
-compdef _git gup=git-fetch
 
+
+# git reset hard - gup
+function guph() {
+  if ! git diff-index --quiet HEAD; then
+    echo your index is dirty
+    echo pressing enter blows your changes away
+    echo ctrl-c to back out
+
+    read
+  fi
+
+  git reset --hard HEAD
+  gup_base
+}
+
+
+# stash - gup - stash pop
+function gups() {
+  local stashed
+  stashed=$(git stash)
+
+  gup_base
+
+  if [[ $stashed != "No local changes to save" ]]
+  then
+    git stash pop
+  fi
+}
 
 
 function grelease() {
