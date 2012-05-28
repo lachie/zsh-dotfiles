@@ -39,6 +39,7 @@ function gup() {
     echo please git stash or commit, then rerun gup
   else
     gup_base
+    git submodule update --init
   fi
 }
 
@@ -55,6 +56,8 @@ function guph() {
 
   git reset --hard HEAD
   gup_base
+
+  git submodule update --init
 }
 
 
@@ -68,6 +71,8 @@ function gups() {
   if [[ $stashed != "No local changes to save" ]]
   then
     git stash pop
+  else
+    git submodule update --init
   fi
 }
 
