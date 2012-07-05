@@ -135,3 +135,18 @@ function grelease_finish() {
 
   rm ./CURRENT_GIT_FLOW_RELEASE
 }
+
+
+function gcl() {
+  local remote=$1
+  local localdir=$2
+
+  git clone $*
+
+  if [[ -z "$localdir" ]]; then
+    localdir=${remote%.git}
+    localdir=${localdir##*/}
+  fi
+
+  ( cd $localdir && add_project )
+}
