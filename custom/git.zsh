@@ -22,59 +22,8 @@ alias grh="git reset --hard HEAD"
 alias gm='git merge --no-ff'
 
 
-# gup and friends
-function git_current_branch() {
-  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
-}
-
-alias grb='git rebase -p'
-
-
-alias gup_base='git fetch origin && grb origin/$(git_current_branch)'
-
-
-function gup() {
-  if ! git diff-index --quiet HEAD; then
-    echo your index is dirty
-    echo please git stash or commit, then rerun gup
-  else
-    gup_base
-    git submodule update --init
-  fi
-}
-
-
-# git reset hard - gup
-function guph() {
-  if ! git diff-index --quiet HEAD; then
-    echo your index is dirty
-    echo pressing enter blows your changes away
-    echo ctrl-c to back out
-
-    read
-  fi
-
-  git reset --hard HEAD
-  gup_base
-
-  git submodule update --init
-}
-
-
-# stash - gup - stash pop
-function gups() {
-  local stashed
-  stashed=$(git stash)
-
-  gup_base
-
-  if [[ $stashed != "No local changes to save" ]]
-  then
-    git stash pop
-  else
-    git submodule update --init
-  fi
-}
+# gup and friends - use the shared Dropbox version
+source $HOME/Dropbox/Blake/sync/shell/gup.sh
 
 
 function grelease() {
