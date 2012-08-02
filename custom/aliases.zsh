@@ -9,6 +9,8 @@ alias start_mongod="mongod --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongo
 
 alias less="less -r"
 
+alias ack="noglob ack"
+
 function apk() {
   declare -a to_open
 
@@ -19,6 +21,7 @@ function apk() {
 
   ack "$@" $to_open
 }
+alias apk="noglob apk"
 
 function f() {
   find . -iname "*$**"
