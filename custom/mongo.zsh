@@ -1,3 +1,3 @@
 mongodb () {
-  mongod run --config $(brew --prefix mongodb)/mongod.conf $*
+  mongod run --config /usr/local/etc/mongod.conf $*
 }
