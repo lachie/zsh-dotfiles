@@ -7,6 +7,8 @@ alias gap="git add -p"
 alias gx='gitx'
 alias gd='git diff'
 
+alias gpoh="git push origin HEAD"
+
 function gdx() {
   git diff $* | gitx
 }
