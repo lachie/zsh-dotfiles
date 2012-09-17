@@ -30,7 +30,9 @@ function f() {
 alias dl="curl -L -O"
 
 export dropbox=$HOME/Dropbox
-export p2dropbox=$dropbox/Plus2
+export blake_dropbox=$dropbox/Blake
+
+alias bdb="cd $blake_dropbox"
 
 export dev=$HOME/dev
 export p2dev=$dev/plus2
