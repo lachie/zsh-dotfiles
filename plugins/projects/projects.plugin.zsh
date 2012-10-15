@@ -13,7 +13,7 @@ p() {
 }
 
 
-# open a project in mvim
+# open a project in $EDITOR
 m() {
   if [[ $# -eq 0 ]]; then
     mvim .

@@ -7,7 +7,7 @@ function mvim()
     unset GEM_PATH
     unset GEM_HOME
     rbenv shell system
-    command mvim "$@"
+    command $EDITOR "$@"
   )
 }
 
