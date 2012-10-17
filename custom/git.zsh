@@ -4,7 +4,13 @@ compdef _git gf=git-fetch
 alias ga="git add"
 alias gap="git add -p"
 
-alias gx='gitx'
+if [ -x '/usr/bin/gitk' ]; then
+  function gx() {
+    gitk --all $* &
+  }
+else
+  alias gx='gitx'
+fi
 alias gd='git diff'
 
 alias gpoh="git push origin HEAD"
