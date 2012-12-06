@@ -25,7 +25,11 @@ alias glog='git log $git_concise_log_format'
 alias gl='glog --graph'
 alias glg='git log --graph --oneline --decorate'
 
-alias grh="git reset --hard HEAD"
+function grh() {
+  local branch
+  branch=${1-HEAD}
+  echo git reset --hard $branch
+}
 
 alias gm='git merge --no-ff'
 
