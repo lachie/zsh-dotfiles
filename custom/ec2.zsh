@@ -9,9 +9,13 @@ export JAVA_HOME
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
 export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 
+export AWS_CREDENTIAL_FILE=$HOME/.ec2/credentials.txt
+
 HOMEBREW_EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 if [ -d $HOMEBREW_EC2_HOME ]; then
   export EC2_HOME=$HOMEBREW_EC2_HOME
 fi
+
+export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars"
 
 export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.3.003/jars"
