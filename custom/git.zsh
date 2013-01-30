@@ -4,7 +4,8 @@ compdef _git gf=git-fetch
 alias ga="git add"
 alias gap="git add -p"
 
-if [ -x '/usr/bin/gitk' ]; then
+if [ -x '/usr/local/bin/gitk' ]; then
+  unalias gx
   function gx() {
     gitk --all $* &
   }
