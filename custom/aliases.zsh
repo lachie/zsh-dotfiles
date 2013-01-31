@@ -9,8 +9,8 @@ alias start_mongod="mongod --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongo
 
 alias less="less -r"
 
-alias ag="noglob ag --smart-case -C 2"
 alias ack="noglob ag --smart-case -C 2"
+alias ag="noglob ag --smart-case -C 2"
 
 function apk() {
   declare -a to_open

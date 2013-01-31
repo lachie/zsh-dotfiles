@@ -13,7 +13,7 @@ else
 fi
 alias gd='git diff'
 
-alias gpoh="git push origin HEAD"
+alias gpoh="git push --set-upstream origin HEAD"
 
 function gdx() {
   git diff $* | gitx
