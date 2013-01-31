@@ -4,12 +4,12 @@ compdef _git gf=git-fetch
 alias ga="git add"
 alias gap="git add -p"
 
-if [ -x '/usr/bin/gitk' ]; then
+if [ -x '/usr/local/bin/gitx' ]; then
+  alias gx='gitx'
+else
   function gx() {
     gitk --all $* &
   }
-else
-  alias gx='gitx'
 fi
 alias gd='git diff'
 
@@ -28,7 +28,7 @@ alias glg='git log --graph --oneline --decorate'
 function grh() {
   local branch
   branch=${1-HEAD}
-  echo git reset --hard $branch
+  git reset --hard $branch
 }
 
 alias gm='git merge --no-ff'
