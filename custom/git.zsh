@@ -34,6 +34,12 @@ function grh() {
 alias gm='git merge --no-ff'
 
 
+alias gcot='git checkout -t'
+compdef _git gcot=git-checkout
+alias gcob='git checkout -b'
+compdef _git gcob=git-checkout
+
+
 # gup and friends - use the shared Dropbox version
 source $HOME/Dropbox/Blake/sync/shell/gup.sh
 
