@@ -1,4 +1,4 @@
-alias gf="git fetch"
+alias gf="git fetch --prune"
 compdef _git gf=git-fetch
 
 alias ga="git add"
