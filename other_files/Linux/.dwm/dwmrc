@@ -1,0 +1,26 @@
+gnome-settings-daemon &
+
+[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
+
+# fix for java apps
+wmname LG3D
+
+#trayer --margin 0 --edge top --align right --height 18 --widthtype request --width 15 --transparent true --SetDockType false --SetPartialStrut false &
+#nm-applet &
+
+#gnome-sound-applet &
+# gnome-power-manager &
+#gnome-volume-control-applet &
+
+# pidgin &
+#dwm-status-bar &
+
+while true; do
+  date=`date +"%_H%M"`
+#mem=`free -m | awk '/cache:/ { printf "mem:"$4"M " } /Swap:/ { print "swap:"$4"M" }'`
+#  uptime=`uptime | awk '{ split($0,s,"average: "); print s[2] }'`
+#  space=`df -h | awk '/home$/ { print "/home:"$4 } /\/$/ { printf "/:"$4" " }'`
+#  xsetroot -name "$date :: $mem $space :: $uptime          " # leave some space for trayer
+  xsetroot -name "$date"
+  sleep 30
+done
