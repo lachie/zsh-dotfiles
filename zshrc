@@ -21,6 +21,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow cap projects rubygems zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git git-flow cap projects rubygems zsh-syntax-highlighting zsh-history-substring-search keychain)
+
 
 source $ZSH/oh-my-zsh.sh
