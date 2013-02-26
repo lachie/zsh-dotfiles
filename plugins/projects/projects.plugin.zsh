@@ -31,6 +31,12 @@ add_project() {
 }
 
 
+projects_create_db() {
+  mkdir -p $(dirname $p_completion_cache)
+  sqlite3 -batch $p_completion_cache "CREATE TABLE git_repos (name varchar(255), basename varchar(255), path text, save integer);"
+}
+
+
 # reindex the projects
 projects_reindex() {
   shallow_git_find $p_completion_cache $project_roots
