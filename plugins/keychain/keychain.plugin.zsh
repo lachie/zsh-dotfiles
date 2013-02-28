@@ -1,2 +1,2 @@
-PEMS=$(ls $HOME/.ssh/*.pem)
-eval `keychain --eval --agents ssh id_rsa $PEMS`
+IDS=$(ls $HOME/.ssh/id_?sa)
+eval `keychain --eval --quiet --agents ssh $IDS`
