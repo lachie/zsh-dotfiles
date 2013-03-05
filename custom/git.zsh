@@ -13,6 +13,8 @@ else
 fi
 alias gd='git diff'
 
+alias gcola='git cola &'
+
 alias gpoh="git push --set-upstream origin HEAD"
 
 function gdx() {
