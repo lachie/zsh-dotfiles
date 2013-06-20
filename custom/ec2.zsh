@@ -9,20 +9,18 @@ export JAVA_HOME
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-lachie.pem)"
 export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-lachie.pem)"
 
-export AWS_CREDENTIAL_FILE=$HOME/.ec2/credentials.txt
 
 # autoscaling
 export AWS_AUTO_SCALING_HOME=$HOME/Downloads/AutoScaling-1.0.61.2
+export AWS_IAM_HOME=$HOME/.ec2/IAMCli-1.5.0
 
 
 HOMEBREW_EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 if [ -d $HOMEBREW_EC2_HOME ]; then
   export EC2_HOME=$HOMEBREW_EC2_HOME
+  export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars"
+  export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.3.003/jars"
 fi
-
-export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars"
-
-export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.3.003/jars"
 
 
 UBUNTU_CFN_HOME="/usr/local/aws/cfn"
@@ -32,4 +30,4 @@ fi
 
 export AWS_CREDENTIAL_FILE=$HOME/.ec2/credentials.txt
 
-export PATH=$AWS_CLOUDFORMATION_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$PATH
+export PATH=$AWS_CLOUDFORMATION_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_IAM_HOME/bin:$PATH
