@@ -6,10 +6,14 @@ else
   JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 fi
 export JAVA_HOME
-export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
-export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-lachie.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-lachie.pem)"
 
 export AWS_CREDENTIAL_FILE=$HOME/.ec2/credentials.txt
+
+# autoscaling
+export AWS_AUTO_SCALING_HOME=$HOME/Downloads/AutoScaling-1.0.61.2
+
 
 HOMEBREW_EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 if [ -d $HOMEBREW_EC2_HOME ]; then
@@ -28,4 +32,4 @@ fi
 
 export AWS_CREDENTIAL_FILE=$HOME/.ec2/credentials.txt
 
-export PATH=$AWS_CLOUDFORMATION_HOME/bin:$PATH
+export PATH=$AWS_CLOUDFORMATION_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$PATH
