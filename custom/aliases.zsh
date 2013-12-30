@@ -27,6 +27,7 @@ alias apk="noglob apk"
 function f() {
   find . -iname "*$**"
 }
+alias f="noglob f"
 
 alias dl="curl -L -O"
 
