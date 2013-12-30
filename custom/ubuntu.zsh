@@ -16,3 +16,6 @@ srvdropbox() {
   ) &
   python -mSimpleHTTPServer
 }
+
+alias apts="aptitude search"
+alias apti="apt-get install"
