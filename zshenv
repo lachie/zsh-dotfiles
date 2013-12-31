@@ -9,7 +9,11 @@ chruby ruby-1.9.3-p448
 eval "$($HOME/Blake/bx/bin/bx init -)"
 eval "$($HOME/Blake/blake-cloud/bin/bc init - zsh)"
 
-export TERM=rxvt-256color
+if [[ "$TMUX" ]]; then
+  export TERM=screen-256color
+else
+  export TERM=rxvt-256color
+fi
 
 # export GOPATH=$HOME/dev/go:$HOME/dev/blake
 export GOPATH=$HOME/dev/blake/go
