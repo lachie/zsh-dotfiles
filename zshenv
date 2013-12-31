@@ -10,9 +10,9 @@ eval "$($HOME/Blake/bx/bin/bx init -)"
 eval "$($HOME/Blake/blake-cloud/bin/bc init - zsh)"
 
 if [[ "$TMUX" ]]; then
-  export TERM=screen-256color
+  export TERM="screen-256color"
 else
-  export TERM=rxvt-256color
+  export TERM="rxvt-256color"
 fi
 
 # export GOPATH=$HOME/dev/go:$HOME/dev/blake
