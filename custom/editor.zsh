@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/vim
+export EDITOR=$(which vim)
 
 function mvim()
 {
@@ -10,7 +10,7 @@ function mvim()
       command $HOME/bin/mvim "$@"
     else
       # TODO write this value somewhere?
-      rbenv shell 1.9.3-p327
+      # rbenv shell 1.9.3-p327
       command $EDITOR "$@"
     fi
   )
