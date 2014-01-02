@@ -9,7 +9,7 @@ chruby ruby-1.9.3-p448
 eval "$($HOME/Blake/bx/bin/bx init -)"
 eval "$($HOME/Blake/blake-cloud/bin/bc init - zsh)"
 
-if [[ "$TMUX" ]]; then
+if [ "$TMUX" ]; then
   export TERM="screen-256color"
 else
   export TERM="rxvt-256color"
