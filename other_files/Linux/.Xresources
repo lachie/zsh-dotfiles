@@ -14,7 +14,6 @@ urxvt.scrollBar:         false
 urxvt.backgroundPixmap:  /home/vermaden/.themes/urxvt.back.xpm
 urxvt.imLocale:          en_US.UTF-8
 urxvt.loginShell:        true
-urxvt.saveLines:         512
 urxvt.termName: rxvt-256color
 
 urxvt.depth:             32
@@ -31,6 +30,11 @@ urxvt.internalBorder:    0
 urxvt.cursorBlink:       false
 urxvt.cursorColor:       #dd9900
 urxvt.cursorColor2:      #000000
+
+urxvt.saveLines:         100000
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
 
 !urxvt.background:        #000000
 !urxvt.foreground:        #ddccbb
