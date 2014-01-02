@@ -33,6 +33,12 @@ function grh() {
   git reset --hard $branch
 }
 
+function gro() {
+  local branch
+  branch=origin/${1-$(git cb)}
+  git fetch && git reset --hard $branch
+}
+
 alias gm='git merge --no-ff'
 
 
@@ -43,7 +49,7 @@ compdef _git gcob=git-checkout
 
 
 # gup and friends - use the shared Dropbox version
-source $HOME/Dropbox/Blake/sync/shell/gup.sh
+# source $HOME/Dropbox/Blake/sync/shell/gup.sh
 
 
 function grelease() {
