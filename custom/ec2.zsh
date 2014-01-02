@@ -14,6 +14,8 @@ export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-lachie.pem)"
 export AWS_AUTO_SCALING_HOME=$HOME/Downloads/AutoScaling-1.0.61.2
 export AWS_IAM_HOME=$HOME/.ec2/IAMCli-1.5.0
 
+export AWS_DEFAULT_REGION=us-west-2
+
 
 HOMEBREW_EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 if [ -d $HOMEBREW_EC2_HOME ]; then
