@@ -25,7 +25,7 @@ m() {
 
 add_project() {
   local base
-  base=$(basename $PWD)
+  base=${1-=$(basename $PWD)}
   
   sqlite3 -batch $p_completion_cache "insert into git_repos values('$base','$base','$PWD',1)"
 }
