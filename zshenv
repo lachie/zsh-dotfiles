@@ -16,4 +16,5 @@ else
 fi
 
 # export GOPATH=$HOME/dev/go:$HOME/dev/blake
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/blake/go
