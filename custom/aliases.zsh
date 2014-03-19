@@ -44,3 +44,5 @@ alias dl='curl -L -O'
 alias bridge="ssh bridge -t tmux attach"
 
 alias ssh-key="cat ~/.ssh/id_rsa.pub | pbcopy"
+
+alias d="sudo docker"
