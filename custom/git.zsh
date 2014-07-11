@@ -40,6 +40,7 @@ function gro() {
 }
 
 alias gm='git merge --no-ff'
+alias gmff='git merge'
 
 
 alias gcot='git checkout -t'
