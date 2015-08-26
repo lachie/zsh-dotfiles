@@ -1,4 +1,5 @@
 alias apt-get="sudo apt-get"
+alias aptitude="sudo aptitude"
 alias vi="vim"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
