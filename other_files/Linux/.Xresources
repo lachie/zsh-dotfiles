@@ -11,7 +11,7 @@ Xft.hintstyle:              hintslight
 
 urxvt.font:              xft:inconsolata:pixelsize=12
 urxvt.scrollBar:         false
-urxvt.backgroundPixmap:  /home/vermaden/.themes/urxvt.back.xpm
+! urxvt.backgroundPixmap:  /home/vermaden/.themes/urxvt.back.xpm
 urxvt.imLocale:          en_US.UTF-8
 urxvt.loginShell:        true
 urxvt.termName: rxvt-256color

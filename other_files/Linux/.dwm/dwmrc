@@ -3,7 +3,7 @@ gnome-settings-daemon &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
 # fix for java apps
-wmname LG3D
+# wmname LG3D
 
 #trayer --margin 0 --edge top --align right --height 18 --widthtype request --width 15 --transparent true --SetDockType false --SetPartialStrut false &
 #nm-applet &
